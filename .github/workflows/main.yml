@@ -21,13 +21,13 @@ jobs:
         cache: gradle
 
     - name: Make gradlew executable
-      run: chmod +x gradlew
+      run: chmod +x PowderGrinder/gradlew
 
     - name: Build with Gradle
-      run: ./gradlew build
+      run: cd PowderGrinder && ./gradlew build
 
     - name: Upload JAR as artifact
       uses: actions/upload-artifact@v4
       with:
         name: powder-grinder-mod
-        path: build/libs/powder-grinder-1.0.0.jar
+        path: PowderGrinder/build/libs/powder-grinder-1.0.0.jar
